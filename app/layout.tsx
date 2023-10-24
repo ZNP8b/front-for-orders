@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <div className='flex flex-col gap-5'>
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   )
