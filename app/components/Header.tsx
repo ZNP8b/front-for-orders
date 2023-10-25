@@ -16,7 +16,7 @@ const sortLinks = ['Время доставки', 'Готовые блюда', '
 
 const Header = () => {
   return (
-    <div className="flex justify-around gap-[2px] flex-col text-xl md:flex-row md:text-base lg:text-xl 2xl:text-2xl">
+    <div className="flex justify-around gap-1 flex-col text-xl md:flex-row md:text-base lg:text-xl 2xl:text-2xl">
       {
         links.map((item) => (
           <Link
@@ -33,23 +33,26 @@ const Header = () => {
         ))
       }
 
-      <span
-        className="flex flex-1 justify-center items-center md:text-sm lg:text-xl 2xl:text-2xl
+      <div className="flex flex-[3] flex-col md:flex-row">
+
+        <span
+          className="flex flex-1 justify-center items-center md:text-sm lg:text-xl 2xl:text-2xl
          text-white text-center bg-[#343A40] text-[#F9F9F9]/80 py-4">
-        Сортировать по
-      </span>
+          Сортировать по
+        </span>
 
-      {
-        sortLinks.map((item) => (
-          <Link
-            className="flex flex-1 bg-[#343A40] text-white justify-center items-center 
-            text-center py-4 hover:text-black hover:bg-white transition-colors duration-250"
-            href='/'>
+        {
+          sortLinks.map((item) => (
+            <Link
+              className="flex flex-1 bg-[#343A40] text-white justify-center items-center 
+          text-center py-4 hover:text-black hover:bg-white transition-colors duration-250"
+              href='/'>
 
-            <span>{item}</span>
-          </Link>
-        ))
-      }
+              <span className="px-3">{item}</span>
+            </Link>
+          ))
+        }
+      </div>
 
     </div>
   )
